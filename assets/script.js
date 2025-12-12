@@ -21,51 +21,54 @@ sections.forEach((section) => {
 // ==================== HERO CAROUSEL ====================
 document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll(".hero__slide");
-  const indicators = document.querySelectorAll(".hero__indicator");
   let currentSlide = 0;
   let autoSlideInterval;
+  let isTransitioning = false;
 
   if (slides.length === 0) return;
 
-  // Initialize: set first slide as active
-  slides[0].classList.add("active");
+  function goToSlide(n, direction = "next") {
+    if (isTransitioning) return;
+    isTransitioning = true;
 
-  function goToSlide(n) {
-    // Remove classes from current slide
-    slides[currentSlide].classList.remove("active");
-    indicators[currentSlide].classList.remove("active");
-    
-    // Add prev class to current slide (slides out to left)
-    slides[currentSlide].classList.add("prev");
-    
-    // Update current slide
-    currentSlide = (n + slides.length) % slides.length;
-    
-    // Add active class to new slide (slides in from right)
-    slides[currentSlide].classList.add("active");
-    indicators[currentSlide].classList.add("active");
-    
-    // Remove prev class from all slides after transition
+    const nextSlide = (n + slides.length) % slides.length;
+
+    // Remove all classes from all slides first
+    slides.forEach(slide => {
+      slide.classList.remove("active", "prev", "next");
+    });
+
+    // Current slide exits based on direction
+    if (direction === "next") {
+      slides[currentSlide].classList.add("prev"); // Exit left
+    } else {
+      slides[currentSlide].classList.add("next"); // Exit right
+    }
+
+    // Next slide enters
+    slides[nextSlide].classList.add("active");
+
+    // Update current index
+    currentSlide = nextSlide;
+
+    // Clean up after animation
     setTimeout(() => {
-      slides.forEach(slide => slide.classList.remove("prev"));
+      slides.forEach(slide => {
+        slide.classList.remove("prev", "next");
+      });
+      isTransitioning = false;
     }, 800);
   }
 
   function nextSlide() {
-    goToSlide(currentSlide + 1);
+    goToSlide(currentSlide + 1, "next");
   }
 
-  // Auto-slide every 6 seconds
-  autoSlideInterval = setInterval(nextSlide, 6000);
+  // Initialize first slide
+  slides[0].classList.add("active");
 
-  // Indicator click handlers
-  indicators.forEach((indicator) => {
-    indicator.addEventListener("click", () => {
-      clearInterval(autoSlideInterval);
-      goToSlide(parseInt(indicator.dataset.slide));
-      autoSlideInterval = setInterval(nextSlide, 6000);
-    });
-  });
+  // Auto-slide every 4 seconds
+  autoSlideInterval = setInterval(nextSlide, 4000);
 });
 
 // Mobile menu toggle

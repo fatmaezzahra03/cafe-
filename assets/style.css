@@ -31,7 +31,7 @@ body {
   flex: 60%;
   color: #d0841a;
 }
-
+/*  display flex t5alihom horizontal*/
 .nav__list {
   display: flex;
   align-items: center;
@@ -69,6 +69,7 @@ body {
   color: inherit;
   text-decoration: none;
 }
+
 .hero {
   height: 80vh;
   width: 100%;
@@ -206,10 +207,10 @@ body {
 }
 
 .cafe__left {
-  display: flex;
+  
   flex-basis: 45%;
   padding: 15px;
-  flex-direction: column;
+  
 }
 
 .cafe__title {
@@ -222,7 +223,7 @@ body {
   font-family: "Raleway";
   line-height: 1.6;
   color: #444;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 .cafe__img {
