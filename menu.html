@@ -40,8 +40,19 @@
         <!-- Menu Section -->
         <div class="menu-page__menu">
           <h2 class="menu-page__section-title">Available Items</h2>
+          <!-- Inserted search bar for menu page only -->
+          <div class="menu-search">
+            <input
+              id="menuSearchInput"
+              class="menu-search__input"
+              type="text"
+              placeholder="Search items..."
+              aria-label="Search items"
+            />
+            <span class="menu-search__hint">Type to filter the menu</span>
+          </div>
           <div class="menu__grid">
-            <div class="menu__card">
+            <div class="menu__card" data-price="4.00">
               <img
                 src="assets/images/kaley-dykstra-E5Yb_0jua2U-unsplash.jpg"
                 alt="menu img."
@@ -143,29 +154,7 @@
           </div>
         </div>
 
-        <!-- Invoice Section -->
-        <aside class="invoice">
-          <h2 class="invoice__title">Your Order</h2>
-          <div class="invoice__items" id="invoiceItems">
-            <p class="invoice__empty">No items added yet</p>
-          </div>
-          <div class="invoice__summary">
-            <div class="invoice__row">
-              <span>Subtotal:</span>
-              <span id="subtotal">$0.00</span>
-            </div>
-            <div class="invoice__row">
-              <span>Tax (10%):</span>
-              <span id="tax">$0.00</span>
-            </div>
-            <div class="invoice__row invoice__total">
-              <span>Total:</span>
-              <span id="total">$0.00</span>
-            </div>
-          </div>
-          <button class="invoice__btn" id="checkoutBtn">Checkout</button>
-          <button class="invoice__btn invoice__btn--clear" id="clearBtn">Clear Cart</button>
-        </aside>
+
       </div>
     </section>
 
@@ -203,7 +192,7 @@
         </div>
       </div>
       <p class="footer__text">
-        &copy; 2025 Mohammed-Er landing page project. All rights reserved.
+        &copy; 2025 Cozy Cafe Shop. All rights reserved.
       </p>
     </footer>
     <script src="assets/script.js"></script>

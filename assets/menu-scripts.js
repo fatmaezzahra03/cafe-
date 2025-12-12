@@ -103,18 +103,3 @@ clearBtn.addEventListener("click", function () {
   cart = [];
   updateInvoice();
 });
-
-// Mobile menu toggle
-const toggleIcon = document.getElementById("navToggle");
-const navList = document.getElementById("navList");
-const navItems = document.querySelectorAll(".nav__list-item");
-
-toggleIcon.addEventListener("click", () => {
-  navList.classList.toggle("nav__toggle");
-});
-
-navItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    navList.classList.remove("nav__toggle");
-  });
-});
