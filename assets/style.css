@@ -109,6 +109,11 @@ body {
   z-index: 0;
 }
 
+.hero__slide.next {
+  left: 100%;
+  z-index: 0;
+}
+
 .hero::before {
   content: '';
   position: absolute;

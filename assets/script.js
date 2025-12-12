@@ -21,6 +21,7 @@ sections.forEach((section) => {
 // ==================== HERO CAROUSEL ====================
 document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll(".hero__slide");
+  const indicators = document.querySelectorAll(".hero__indicator");
   let currentSlide = 0;
   let autoSlideInterval;
   let isTransitioning = false;
@@ -33,9 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const nextSlide = (n + slides.length) % slides.length;
 
-    // Remove all classes from all slides first
+    // Remove all classes from all slides and indicators first
     slides.forEach(slide => {
       slide.classList.remove("active", "prev", "next");
+    });
+    indicators.forEach(indicator => {
+      indicator.classList.remove("active");
     });
 
     // Current slide exits based on direction
@@ -47,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Next slide enters
     slides[nextSlide].classList.add("active");
+    indicators[nextSlide].classList.add("active");
 
     // Update current index
     currentSlide = nextSlide;
@@ -66,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize first slide
   slides[0].classList.add("active");
+  indicators[0].classList.add("active");
 
   // Auto-slide every 4 seconds
   autoSlideInterval = setInterval(nextSlide, 4000);
