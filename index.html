@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <title>Cozy Cafe Shop - Your Best Local Cafe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,10 +23,10 @@
         <i class="fas fa-bars"></i>
       </div>
       <ul class="nav__list" id="navList">
-        <li class="nav__list-item">Home</li>
-        <li class="nav__list-item">About</li>
-        <li class="nav__list-item">Menu</li>
-        <li class="nav__list-item">Contact</li>
+        <li class="nav__list-item"><a href="#home">Home</a></li>
+        <li class="nav__list-item"><a href="#about">About</a></li>
+        <li class="nav__list-item"><a href="menu.html">Menu</a></li>
+        <li class="nav__list-item"><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <header class="hero" id="home">
@@ -76,110 +77,38 @@
         />
       </div>
     </section>
-    <section class="menu" id="menu">
-      <h2 class="menu__title">Our Menu</h2>
-      <div class="menu__grid">
-        <div class="menu__card">
-          <img
-            src="assets/images/kaley-dykstra-E5Yb_0jua2U-unsplash.jpg"
-            alt="menu img."
-            class="menu__img"
-          />
-          <h3 class="menu__item">Croissant</h3>
-          <p class="menu__desc">Fresh and baked daily</p>
-          <span class="menu__price">$4.00</span>
-          <button class="menu__btn">Order Now</button>
+
+    <!-- Nos Valeurs Section -->
+    <section class="values" id="values">
+      <h2 class="values__title">Our Values</h2>
+      <div class="values__container">
+        <div class="values__card">
+          <i class="fas fa-leaf"></i>
+          <h3 class="values__name">Local Products</h3>
+          <p class="values__desc">We source our ingredients from local farmers and roasters, supporting our community while ensuring freshness and quality in every cup.</p>
         </div>
-        <div class="menu__card">
-          <img
-            src="assets/images/agustin-ljosmyndun-9YClZQXXZPQ-unsplash.jpg"
-            alt="menu img."
-            class="menu__img"
-          />
-          <h3 class="menu__item">Chocolate Muffin</h3>
-          <p class="menu__desc">Soft and moist with melty chocolate chunks</p>
-          <span class="menu__price">$3.75</span>
-          <button class="menu__btn">Order Now</button>
+        <div class="values__card">
+          <i class="fas fa-heart"></i>
+          <h3 class="values__name">Friendly Service</h3>
+          <p class="values__desc">Our team is passionate about making you feel welcome. Every interaction is an opportunity to create a meaningful connection with our customers.</p>
         </div>
-        <div class="menu__card">
-          <img
-            src="assets/images/jonathan-kemper-C4oRBV0P0gE-unsplash.jpg"
-            alt="menu img."
-            class="menu__img"
-          />
-          <h3 class="menu__item">Cinnamon Roll</h3>
-          <p class="menu__desc">Swirled with cinnamon-sugar</p>
-          <span class="menu__price">$4.25</span>
-          <button class="menu__btn">Order Now</button>
-        </div>
-        <div class="menu__card">
-          <img
-            src="assets/images/tim-wildsmith-5cC8kzR_b6o-unsplash.jpg"
-            alt="menu img."
-            class="menu__img"
-          />
-          <h3 class="menu__item">Cappuccino</h3>
-          <p class="menu__desc">Bold espresso topped with silky milk foam</p>
-          <span class="menu__price">$3.50</span>
-          <button class="menu__btn">Order Now</button>
-        </div>
-        <div class="menu__card">
-          <img
-            src="assets/images/demi-deherrera-L-sm1B4L1Ns-unsplash.jpg"
-            alt="menu img."
-            class="menu__img"
-          />
-          <h3 class="menu__item">Latte</h3>
-          <p class="menu__desc">Smooth and mellow with steamed milk</p>
-          <span class="menu__price">$3.75</span>
-          <button class="menu__btn">Order Now</button>
-        </div>
-        <div class="menu__card">
-          <img
-            src="assets/images/giancarlo-duarte-RtHw0PWCLhw-unsplash.jpg"
-            alt="menu img."
-            class="menu__img"
-          />
-          <h3 class="menu__item">Hot Chocolate</h3>
-          <p class="menu__desc">Velvety and sweet with real cocoa</p>
-          <span class="menu__price">$3.25</span>
-          <button class="menu__btn">Order Now</button>
-        </div>
-        <div class="menu__card">
-          <img
-            src="assets/images/eiliv-aceron-_tSgUmeYMm8-unsplash.jpg"
-            alt="menu img."
-            class="menu__img"
-          />
-          <h3 class="menu__item">Iced Coffee</h3>
-          <p class="menu__desc">clean and refreshing with a bold kick.</p>
-          <span class="menu__price">$3.50</span>
-          <button class="menu__btn">Order Now</button>
-        </div>
-        <div class="menu__card">
-          <img
-            src="assets/images/olena-bohovyk-3aqVCnwcO3s-unsplash.jpg"
-            alt="menu img."
-            class="menu__img"
-          />
-          <h3 class="menu__item">Iced Matcha</h3>
-          <p class="menu__desc">cool and energizing.</p>
-          <span class="menu__price">$3.25</span>
-          <button class="menu__btn">Order Now</button>
-        </div>
-        <div class="menu__card">
-          <img
-            src="assets/images/wafer-wan-8JUiGoAnpp8-unsplash.jpg"
-            alt="menu img."
-            class="menu__img"
-          />
-          <h3 class="menu__item">Sparkling water</h3>
-          <p class="menu__desc">Crisp, bubbly, and refreshing</p>
-          <span class="menu__price">$3.00</span>
-          <button class="menu__btn">Order Now</button>
+        <div class="values__card">
+          <i class="fas fa-home"></i>
+          <h3 class="values__name">Cozy Atmosphere</h3>
+          <p class="values__desc">With warm lighting and comfortable seating, our cafe is designed to be your second home where you can relax, work, or catch up with friends.</p>
         </div>
       </div>
     </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="cta__content">
+        <h2 class="cta__title">Ready to taste our specialty coffee?</h2>
+        <p class="cta__description">Explore our full menu and discover your new favorite drink</p>
+        <a href="menu.html" class="cta__button">Discover Our Menu</a>
+      </div>
+    </section>
+
     <section class="contact" id="contact">
       <div class="wrapper">
         <form class="contact__form">
