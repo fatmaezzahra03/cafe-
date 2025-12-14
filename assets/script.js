@@ -364,3 +364,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// ==================== CONTACT MAP ====================
+document.addEventListener("DOMContentLoaded", () => {
+  const mapContainer = document.getElementById("map");
+  if (!mapContainer) return;
+
+  // Initialize Leaflet map centered on Paris, France (Cozy Cafe location)
+  const map = L.map("map").setView([48.8566, 2.3522], 15);
+
+  // Add OpenStreetMap tile layer
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19,
+  }).addTo(map);
+
+  // Add marker for the cafe location
+  const marker = L.marker([48.8566, 2.3522]).addTo(map);
+  marker.bindPopup(
+    '<div style="font-family: Poppins, sans-serif; text-align: center;">' +
+      '<h4 style="color: #d0841a; margin-bottom: 5px;">Cozy Cafe Shop</h4>' +
+      '<p style="margin: 5px 0; font-size: 14px;">123 Coffee Lane, Paris</p>' +
+      '<p style="margin: 5px 0; font-size: 14px;">(123) 456-7890</p>' +
+      '<p style="margin: 5px 0; font-size: 14px;">hello@cozycafe.com</p>' +
+      '</div>',
+    { closeButton: true, maxWidth: 250 }
+  );
+  marker.openPopup();
+
+  // Add custom marker styling
+  const customIcon = L.icon({
+    iconUrl:
+      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d0841a'%3E%3Cpath d='M12 0C7.03 0 3 4.03 3 9c0 5.25 9 15 9 15s9-9.75 9-15c0-4.97-4.03-9-9-9zm0 12c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/%3E%3C/svg%3E",
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -32],
+  });
+  marker.setIcon(customIcon);
+});
